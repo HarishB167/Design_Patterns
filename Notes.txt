@@ -76,6 +76,8 @@ Inheritance(Tool1, Tool)
 
 - Makes Extensible
 
+- Doing different things based on state
+
 --------------------------------------
 Section 5 : Iterator Pattern
 
@@ -93,4 +95,25 @@ Depend(BrowseHistory, Iterator)
 Inheritance(Iterator1, Iterator)
 
 --------------------------------------
-Status - Section 2 Vid 10 completed
+Section 6 - Strategy Pattern
+
+- Storing Images with compression and filter
+
+- Structure
+* ImageStorage (Context)
+compressor, filter
+store()
+* Compressor, Filter (interface) (Strategy)
+compress(), apply()
+* JpegComp, PngComp, B&WFil, HighContFil (ConcreteStrategyA,B)
+compress(), apply()
+* Relationship
+Compose(ImageStorage, [Compressor, Filter])
+Inheritance([JpegComp, PngComp], Compressor)
+Inheritance([B&WFil, HighContFil], Filter)
+
+- Doing same thing differently
+
+
+--------------------------------------
+Status - Section 5 completed
