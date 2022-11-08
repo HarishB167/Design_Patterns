@@ -1,0 +1,43 @@
+
+- What are Design Patterns
+* Elegant solution to repeating problems
+
+- Categories
+* Creational, Structural, Behavioural
+
+--------------------------------------
+Sectin 2 : Essentials
+
+- Coupling
+* Dependency on another class
+* Consumer class also recompiled on change.
+
+- Interfaces
+* Contract - class capabilities
+
+- Encapsulation
+* Restrict state/data changes externally directly.
+* Provide getters/setters.
+
+- Abstraction
+* Hide details
+* Using private
+
+- Inheritance
+
+- Polymorphism
+* Object's ability to morph
+* Using abstract method and class
+
+- UML
+* Unified Modeling Lang
+* -/+ = private/public
+* Method <-/+> <name>([args,..])[:<returnType>]
+* Field <-/+> <name>:type
+* Relationship
+Inheritance, Composition, 
+Dependency (parameter/local var)
+
+
+--------------------------------------
+Status - Section 2 Vid 10 completed
