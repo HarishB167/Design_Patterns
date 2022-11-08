@@ -6,7 +6,7 @@
 * Creational, Structural, Behavioural
 
 --------------------------------------
-Sectin 2 : Essentials
+Section 2 : Essentials
 
 - Coupling
 * Dependency on another class
@@ -37,6 +37,23 @@ Sectin 2 : Essentials
 * Relationship
 Inheritance, Composition, 
 Dependency (parameter/local var)
+
+--------------------------------------
+Section 3 : Memento Pattern
+
+- Undo Mechanism implement
+
+- Structure
+* Editor (Originator)
+createState
+restore(state)
+* EditorState (Memento)
+* History (Caretaker)
+List of EditorState
+push(state), pop
+* Relationship
+Depend(Editor, EditorState)
+Compose(History, EditorState)
 
 
 --------------------------------------
