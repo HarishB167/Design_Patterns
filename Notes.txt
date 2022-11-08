@@ -77,4 +77,20 @@ Inheritance(Tool1, Tool)
 - Makes Extensible
 
 --------------------------------------
+Section 5 : Iterator Pattern
+
+- Browsing History
+
+- Structure
+* BrowseHistory
+push, pop, createIterator
+* Iterator (interface)
+next, current, isDone
+* Iterator1, Iterator2
+Created inside BrowseHistory
+* Relationship
+Depend(BrowseHistory, Iterator)
+Inheritance(Iterator1, Iterator)
+
+--------------------------------------
 Status - Section 2 Vid 10 completed
