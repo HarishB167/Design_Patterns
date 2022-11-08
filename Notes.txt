@@ -114,6 +114,19 @@ Inheritance([B&WFil, HighContFil], Filter)
 
 - Doing same thing differently
 
+--------------------------------------
+Section 7 - Template method Pattern
+
+- Logging each task in banking
+
+- Structure
+* Task (AbstractClass)
+execute (templateMethod)
+doExecute (primitiveOperation) <Hooks>
+* TransferMoney, GenerateReport (ConcreteClass)
+doExecute (primitiveOperation)
+* Relationship
+Inheritance(TransferMoney, Task)
 
 --------------------------------------
 Status - Section 5 completed
