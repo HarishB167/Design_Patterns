@@ -55,6 +55,26 @@ push(state), pop
 Depend(Editor, EditorState)
 Compose(History, EditorState)
 
+--------------------------------------
+Section 4 : State Pattern
+
+- Tool based canvas state
+
+- Structure
+* Canvas (Context)
+currentTool
+action() (request)
+* Tool (Abstract) (State)
+action() (handle)
+* Tool1, Tool2 (ConcreteStateA,B)
+action() (handle)
+* Relationship
+Compose(Canvas, Tool)
+Inheritance(Tool1, Tool)
+
+- Open Closed Principle
+
+- Makes Extensible
 
 --------------------------------------
 Status - Section 2 Vid 10 completed
