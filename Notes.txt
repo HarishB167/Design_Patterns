@@ -4,6 +4,9 @@
 
 - Categories
 * Creational, Structural, Behavioural
+* Creational : Different ways to create objects
+* Structural : Relationships b/w these objects
+* Behavioural : Interaction/Communication b/w objects (Here in first part)
 
 --------------------------------------
 Section 2 : Essentials
@@ -14,16 +17,21 @@ Section 2 : Essentials
 
 - Interfaces
 * Contract - class capabilities
+* Prevents recompilation of dependent classes.
+* public interface MyInteface { float calculateTax();}
+* public class MyClass implements MyInterface {}
+* Using dependency injection framework.
 
 - Encapsulation
 * Restrict state/data changes externally directly.
 * Provide getters/setters.
 
 - Abstraction
-* Hide details
-* Using private
+* Hide unecessary details
+* Using private for non-consumer methods.
 
 - Inheritance
+* Extends keyword
 
 - Polymorphism
 * Object's ability to morph
@@ -35,8 +43,10 @@ Section 2 : Essentials
 * Method <-/+> <name>([args,..])[:<returnType>]
 * Field <-/+> <name>:type
 * Relationship
-Inheritance, Composition, 
-Dependency (parameter/local var)
+Inheritance (filled triangle arrow) (arrow points to super class),
+Composition (Arrow at one side (size) and diamond at other(shape))
+shape is composed of size, 
+Dependency (parameter/local var) (dashed arrow pointing to used class)
 
 --------------------------------------
 Section 3 : Memento Pattern
@@ -73,6 +83,7 @@ Compose(Canvas, Tool)
 Inheritance(Tool1, Tool)
 
 - Open Closed Principle
+* open for extension and closed for modification
 
 - Makes Extensible
 
