@@ -73,11 +73,11 @@ Section 4 : State Pattern
 - Structure
 * Canvas (Context)
 currentTool
-action() (request)
+mouseUp() : action() (request)
 * Tool (Abstract) (State)
-action() (handle)
+mouseUp() : action() (handle)
 * Tool1, Tool2 (ConcreteStateA,B)
-action() (handle)
+mouseUp() : action() (handle)
 * Relationship
 Compose(Canvas, Tool)
 Inheritance(Tool1, Tool)
