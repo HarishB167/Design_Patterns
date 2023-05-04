@@ -99,11 +99,11 @@ Section 5 : Iterator Pattern
 push, pop, createIterator
 * Iterator (interface)
 next, current, isDone
-* Iterator1, Iterator2
+* ListIterator, ArrayIterator
 Created inside BrowseHistory
 * Relationship
 Depend(BrowseHistory, Iterator)
-Inheritance(Iterator1, Iterator)
+Inheritance(ListIterator, Iterator)
 
 --------------------------------------
 Section 6 - Strategy Pattern
@@ -124,6 +124,13 @@ Inheritance([JpegComp, PngComp], Compressor)
 Inheritance([B&WFil, HighContFil], Filter)
 
 - Doing same thing differently
+- Strategy vs state pattern
+Similarity : Change behaviour of an object.
+Difference : 
+State - object can have single state, behaviour are represented by
+subclass of Tool interface. Encapsulates state dependent behaviour.
+Strategy - object has more than 1 state, different behaviour are
+represented using different strategy objects. Encapsulates an algorithm.
 
 --------------------------------------
 Section 7 - Template method Pattern
