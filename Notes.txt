@@ -198,4 +198,36 @@ BoldCommand(document, history).execute()
 UndoCommand(history).execute()
 
 --------------------------------------
-Status - Section 8 completed
+Section 9 - Observer Pattern
+
+- In spreadsheet, change chart on value change
+
+- Structure
+* Subject
+observersList
+addObserver (attach)
+removeObserver (detach)
+notfiyObservers (notify)
+* DataSource (ConcreteSubject)
+value, getValue, setValue
+* Observer (interface)
+update()
+* Spreadsheet/Chart (ConcreteObserver)
+update()
+
+- Relationship
+Compose(Subject, Observer)
+Inheritance(DataSource, Subject)
+Inheritance(Spreadsheet, Observer)
+
+- Communication styles
+* Push
+Observer.update(value)
+ConcreteObserver independent of ConcreteSubject
+* Pull
+Compose(Spreadsheet, DataSource)
+new Spreadsheet(dataSourceObj)
+dataSourceObj.getValue()
+
+--------------------------------------
+Status - Section 9 completed
