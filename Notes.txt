@@ -147,4 +147,55 @@ doExecute (primitiveOperation)
 Inheritance(TransferMoney, Task)
 
 --------------------------------------
-Status - Section 5 completed
+Section 8 - Command Pattern
+
+- Structure
+* Button (Invoker)
+* Command
+Interface
+execute()
+* AddCustomer (ConcreteCommand)
+AddCustomer(service)
+execute() -> service.add_customer()
+* CustomerService (Receiver)
+* Relationship
+Compose(Button, Command)
+Inheritance(AddCustomer, Commmand)
+Dependency(CustomerService, Command)
+
+- Using
+* service = CustomerService()
+* command = AddCustomerCommand(service)
+* button = Button(command)
+
+- Composite commands
+* Create class CompositeCommand(Command)
+* field : commandsList
+* method : add(command), execute() : executes all commands
+
+- Undoable commands
+* Create interface UndoableCommand(Command)
+method : unexecute()
+* Vs-Memento
+Memento : Store snapshots in state
+Undoable cmd : Store changes in state
+* Create class History
+field - List[UndoableCommand]
+method - push, pop, size
+* Create class BoldCommand(UndoableCommand)
+field - prevContent, document, history
+execute() :
+prevContent = doc.content, doc.makeBold(), history.push
+unexecute() - doc.setContent(prevContent) 
+* Create class UndoCommand(Command)
+field - history
+execute() - history.pop().unexecute()
+* Using
+history = History()
+document = HtmlDocument()
+document.set_content("Hello World")
+BoldCommand(document, history).execute()
+UndoCommand(history).execute()
+
+--------------------------------------
+Status - Section 8 completed
