@@ -230,4 +230,24 @@ new Spreadsheet(dataSourceObj)
 dataSourceObj.getValue()
 
 --------------------------------------
-Status - Section 9 completed
+Section 10 - Mediator Pattern
+
+- Syncing input fields in a form
+
+- Structure
+* Dialog (abstract) (Mediator)
+changed(control)
+* ArticlesDialogBox (ConcreteMediator)
+changed(control)
+* UIControl (interface) (Colleague)
+* ListBox, Button (ConcreteColleague)
+owner: Dialog
+
+- Relationship
+* Inheritance(ArticlesDialogBox, DialogBox)
+* Inheritance(ListBox, UIControl)
+* Depend(UIControl, DialogBox)
+* Depend(ArticlesDialogBox, ListBox)
+
+--------------------------------------
+Status - Section 10 completed
