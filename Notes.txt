@@ -303,4 +303,38 @@ newHandler = Handler1(oldHandler/null)
 * Run as : WebServer(lastHandler).handle(request)
 
 --------------------------------------
-Status - Section 11 completed
+Section 12 - Visitor Pattern
+
+- Syntax highlighting by editor
+- Only : object structure is stable, operation added frequently
+
+- Structure
+* HtmlDocument 
+nodesList, add(node), 
+execute(operation) : for all nodes
+* HtmlNode (interface) (Element)
+execute(operation) : accept(visitor)
+* HeadingNode, AnchorNode (ConcreteElement)
+execute(operation) : operation.apply(this)
+accept(visitor) : visitor.visit(this)
+* Operation (interface) (Visitor)
+apply(heading) : visit(ConcreteElementA)
+apply(anchor) : visit(ConcreteElementB)
+* HighlightOperation, PlainTextOperation (ConcreteVisitor)
+apply(heading)
+apply(anchor)
+
+- Relationship
+* Compose(HtmlDocument, HtmlNode)
+* Inheritance(HeadingNode, HtmlNode)
+* Inheritance(HighlightOperation, Operation)
+* Depend(HtmlNode, Operation)
+* Depend(HtmlDocument, Operation)
+
+- Using
+* Create HtmlDocument()
+* Add nodes : doc.add(new Node)
+* Use operations : doc.execute(new OperationA())
+
+--------------------------------------
+Status - Section 12 completed
