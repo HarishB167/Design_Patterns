@@ -1,7 +1,6 @@
 from typing import List
 from .observer import Observer
 
-
 class UIControl:
 
     def __init__(self) -> None:
@@ -14,7 +13,3 @@ class UIControl:
     def notify_observers(self):
         for observer in self.__observers:
             observer.update()
-
-    def get_observers(self):
-        return self.__observers
-            

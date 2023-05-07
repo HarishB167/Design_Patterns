@@ -240,14 +240,41 @@ changed(control)
 * ArticlesDialogBox (ConcreteMediator)
 changed(control)
 * UIControl (interface) (Colleague)
-* ListBox, Button (ConcreteColleague)
+* TextBox, ListBox, Button (ConcreteColleague)
 owner: Dialog
 
 - Relationship
 * Inheritance(ArticlesDialogBox, DialogBox)
-* Inheritance(ListBox, UIControl)
+* Inheritance(TextBox, UIControl)
 * Depend(UIControl, DialogBox)
-* Depend(ArticlesDialogBox, ListBox)
+* Depend(ArticlesDialogBox, TextBox)
+
+- Using
+*  dialog = ArticlesDialogBox()
+* In simulateUserInteraction
+this.articles_list_box.set_selection("Article 1")
+this.title_text_box.set_content("")
+this.title_text_box.set_content("Article 2")
+print("Textbox : " + this.title_text_box.get_content())
+print("Button : " + str(this.save_button.is_enabled()))
+
+- Through Observer pattern
+* Structure
+> UIControl (Subject)
+observersList
+addObserver (attach)
+removeObserver (detach)
+notfiyObservers (notify)
+> TextBox, Button (ConcreteSubject)
+value, getValue, setValue
+> Observer (interface)
+update()
+> ArticlesDialogBox (ConcreteObserver)
+update()
+* Using
+> In ArticlesDialogBox constructor
+self.articles_list_box = TextBox()
+self.articles_list_box.attach(type('NewObserver', (object,), dict(update=self.__article_selected)))
 
 --------------------------------------
 Status - Section 10 completed
