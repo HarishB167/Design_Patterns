@@ -277,4 +277,30 @@ self.articles_list_box = TextBox()
 self.articles_list_box.attach(type('NewObserver', (object,), dict(update=self.__article_selected)))
 
 --------------------------------------
-Status - Section 10 completed
+Section 11 - Chain of Responsibility Pattern
+
+- Processing Http request
+
+- Structure
+* WebServer (Sender)
+handle(request) { handler.handle(request) }
+* Handler (abstract)
+> next: Handler
+> handle() :-
+if self.do_handle(request): return
+if self.__next:self.__next.handle(request)
+> doHandle()
+* Authenticator, Compressor, Logger (ConcreteHandler)
+doHandle()
+
+- Relationship
+Inheritance(Logger, Handler)
+Compose(WebServer, Handler)
+
+- Using
+* Create handlers as : 
+newHandler = Handler1(oldHandler/null)
+* Run as : WebServer(lastHandler).handle(request)
+
+--------------------------------------
+Status - Section 11 completed
