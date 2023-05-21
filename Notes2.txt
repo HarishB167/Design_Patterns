@@ -1,0 +1,35 @@
+Structural Patterns
+
+--------------------------------------
+Section 1 - Composite Pattern
+
+- Object hierarchies : Files and folders
+Treating all objects in same way.
+
+- Structure
+* Component (interface) ()
+render() (operation)
+* Shape (Leaf)
+render() (operation)
+* Group (Composite)
+list: Component
+render() (operation)
+add(component)
+
+- Relationship
+* Inheritance(Shape, Component)
+* Inheritance(Group, Component)
+* Compose(Group, Component)
+
+- Using
+group1 = Group()
+group1.add(Shape())
+group2 = Group()
+group2.add(Shape())
+group = Group()
+group.add(group1)
+group.add(group2)
+group.render()
+
+--------------------------------------
+Status - Section 1 completed
