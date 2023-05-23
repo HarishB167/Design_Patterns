@@ -61,6 +61,9 @@ image_view.apply(CaramelFilter(Caramel()))
 --------------------------------------
 Section 3 - Decorator Pattern
 
+- Adds additional behaviour to object dynamically.
+Storing data with optionally encryption, compression etc.
+
 - Structure
 * Stream (interface) (Component)
 write() (operation)
@@ -88,4 +91,25 @@ store_credit_card(
             CloudStream())))
 
 --------------------------------------
-Status - Section 3 completed
+Section 4 - Facade Pattern
+
+- Provide simple interface for complex system.
+Using NotificationService to send notifications, instead of connecting,
+authorizing, sending, disconnecting manually.
+
+- Structure
+* Main (Client)
+* NotificationService (Facade)
+
+- Relationship
+* Depend(Main, NotificationService)
+* Depend(NotificationService, NotificationServer)
+* Depend(NotificationService, Message)
+
+- Using
+* In NotificationService, take simple message and use all
+classes to send message
+* In main use NotificationService's send method
+
+--------------------------------------
+Status - Section 4 completed
