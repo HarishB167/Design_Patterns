@@ -59,4 +59,33 @@ image_view = ImageView(Image())
 image_view.apply(CaramelFilter(Caramel()))
 
 --------------------------------------
-Status - Section 2 completed
+Section 3 - Decorator Pattern
+
+- Structure
+* Stream (interface) (Component)
+write() (operation)
+* CloudStream (ConcreteComponent)
+write() (operation)
+* Encrypted (Decorator)
+field - stream
+write() (operation) :- 
+Additional behaviour
+stream.write()
+
+- Relationship
+* Inheritance(CloudStream, Stream)
+* Inheritance(Encrypted, Stream)
+* Depend(Encrypted, Stream)
+
+- Vs Adapter
+* In Adaptor : change interface of a class to a different form
+* In Decorator : add additional behaviour to an object
+
+- Using
+store_credit_card(
+    EncryptedCloudStream(
+        CompressedCloudStream(
+            CloudStream())))
+
+--------------------------------------
+Status - Section 3 completed
