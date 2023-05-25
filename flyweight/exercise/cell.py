@@ -1,37 +1,25 @@
+from .cell_format import CellFormat
 
 class Cell:
 
-    def __init__(self, row: int, column: int) -> None:
+    def __init__(self, row: int, column: int, cell_format: CellFormat) -> None:
         self.row: int = row
         self.column: int = column
+        self.cell_format :CellFormat = cell_format
         self.content: str = ""
-        self.font_family: str = ""
-        self.font_size: int = 0
-        self._is_bold: bool = False
 
     def get_content(self) -> str:
         return self.content
 
     def set_content(self, content: str):
         self.content = content
+
+    def set_format(self, cell_format: CellFormat):
+        self.cell_format = cell_format
+
+    def get_format(self) -> CellFormat:
+        return self.cell_format
     
-    def get_font_family(self) -> str:
-        return self.font_family
-
-    def set_font_family(self, font_family: str):
-        self.font_family = font_family
-
-    def get_font_size(self) -> int:
-        return self.font_size
-
-    def set_font_size(self, font_size: int):
-        self.font_size = font_size
-        
-    def is_bold(self) -> bool:
-        return self._is_bold
-
-    def set_is_bold(self, bold: bool):
-        self._is_bold = bold
-
     def render(self):
-        print(f"({self.row}, {self.column}): {self.content} [{self.font_family}]")
+        font_family = self.cell_format.font_family
+        print(f"({self.row}, {self.column}): {self.content} [{font_family}]")
