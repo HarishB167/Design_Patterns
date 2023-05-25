@@ -140,4 +140,36 @@ PointService(PointIconFactor())
 for point in service.getPoints(): point.draw()
 
 --------------------------------------
-Status - Section 5 completed
+Section 6 - Bridge Pattern
+
+- Hierarchy growing in two different directions.
+When new abstraction (features) and implementations comes regularly.
+Like remote type and remote manufacturers.
+To avoid repeating creation of remote for all types.
+Before : Inheritance([AdvancedRemote, SonyRemote, SamsungRemote], RemoteControl)
+Inheritance([SonyAdvanced, SamsungAdvanced], AdvancedRemote)
+After : 
+Feature - Inheritance(AdvancedRemote, RemoteControl)
+Inheritance(SonyTV, Device)
+Compose(RemoteControl, Device)
+
+- Structure
+* RemoteControl (Abstraction)
+device, turnOn()
+* AdvancedRemote (RefinedAbstraction)
+setChannel
+* Device (interface) (Implementor)
+turnOn, turnOff, setChannel
+* SonyTV (ConcreteImplementor)
+
+- Relationship
+* Compose(RemoteControl,Device)
+* Inheritance(AdvancedRemote, RemoteControl)
+* Inheritance(SonyTV, Device)
+
+- Using
+remote_control = AdvancedRemoteControl(SamsungTV())
+remote_control.turnOn()
+
+--------------------------------------
+Status - Section 6 completed
