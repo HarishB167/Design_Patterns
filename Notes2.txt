@@ -112,4 +112,32 @@ classes to send message
 * In main use NotificationService's send method
 
 --------------------------------------
-Status - Section 4 completed
+Section 5 - Flyweight Pattern
+
+- Large number of objects taking significant amount of memeory,
+and reducing amount of memeory by objects. 
+Every point in google map having its copy of icon.
+Referencing PointIcon in all Point in google map
+
+- Structure
+* Point (Client)
+x,y
+* PointIcon (Flyweight)
+type, icon [both are shared states]
+* PointIconFactory (Flyweight Factory)
+Map<PointType, PointIcon>
+getPointIcon(type):PointIcon
+* PointService (Client)
+getPoints()
+
+- Relationship
+* Compose(Point, PointIcon)
+* Compose(PointIconFactory, PointIcon)
+* Depend(PointService, PointIconFactory)
+
+- Using
+PointService(PointIconFactor())
+for point in service.getPoints(): point.draw()
+
+--------------------------------------
+Status - Section 5 completed
