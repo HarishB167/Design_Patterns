@@ -114,8 +114,8 @@ classes to send message
 --------------------------------------
 Section 5 - Flyweight Pattern
 
-- Large number of objects taking significant amount of memeory,
-and reducing amount of memeory by objects. 
+- Large number of objects taking significant amount of memory,
+and reducing amount of memory by objects. 
 Every point in google map having its copy of icon.
 Referencing PointIcon in all Point in google map
 
@@ -172,4 +172,33 @@ remote_control = AdvancedRemoteControl(SamsungTV())
 remote_control.turnOn()
 
 --------------------------------------
-Status - Section 6 completed
+Section 7 - Proxy Pattern
+
+- Doing something extra in proxy.
+Like lazy loading of ebook into memory.
+Logging, authorization, lazy initialization.
+
+- Structure
+* Library (Client)
+add(ebook)
+* Ebook (interface) (Subject)
+show() (request)
+* RealEbook (RealSubject)
+show()
+* EbookProxy (Proxy)
+ebook: RealEbook
+show() : if book == null: ebook = RealEbook(), ebook.show()
+
+- Relationship
+* Compose(EbookProxy, RealEbook)
+* Inheritance(EbookProxy, Ebook)
+* Inheritance(RealEbook, Ebook)
+* Depend(Library, Ebook)
+
+- Using
+library = Library()
+library.add(LoggingEbookProxy(file_name))
+library.open_ebook(file_name)
+
+--------------------------------------
+Status - Section 7 completed
