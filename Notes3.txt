@@ -1,0 +1,29 @@
+Creational Patterns
+
+--------------------------------------
+Section 1 - Prototype Pattern
+
+- Create new object by copying existing objects.
+Copy shapes in ppt.
+
+- Structure
+* Component (Interface) (Prototype)
+render()
+clone()
+* Circle (ConcretePrototype)
+render()
+clone()
+* ContextMenu (Client)
+duplicate() : component.clone()
+
+- Relationship
+* Inheritance(Circle, Component)
+* Depend(ContextMenu, Component)
+
+- Using
+menu = ContextMenu()
+menu.duplicate(circle)
+doc.add(newCircle)
+
+--------------------------------------
+Status - Section 1 
