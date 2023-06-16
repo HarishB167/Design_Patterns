@@ -26,4 +26,22 @@ menu.duplicate(circle)
 doc.add(newCircle)
 
 --------------------------------------
-Status - Section 1 
+Section 2 - Singleton Pattern
+
+- Ensure single instance of a class. 
+E.g. - storing config at one place
+
+- Structure
+* ConfigManager (Singleton)
+private constructor ConfigManager()
+static members: 
+private instance = new ConfigManager(), 
+getInstance() : returns instance
+Instance methods : get(), set()
+
+- Using
+logger1 = Logger.get_instance("file1")
+
+
+--------------------------------------
+Status - Section 2 completed
