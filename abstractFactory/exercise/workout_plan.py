@@ -1,0 +1,3 @@
+
+class WorkoutPlan:
+    pass

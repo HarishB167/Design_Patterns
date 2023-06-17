@@ -69,4 +69,30 @@ render() uses createViewEngine, and
 then engine.render(..)
 
 --------------------------------------
-Status - Section 2 completed
+Section 4 - Abstract Factory Patterns
+
+- Provides an interface for creating
+families of related objects.
+Changing theme of widgets
+
+- Structure
+* WidgetFactory (interface) (AbstractFactory)
+createTextBox()
+createButton()
+* MaterialWidgetFactory (ConcreteFactory1)
+createTextBox : return MaterialTextBox
+* AntWidgetFactory (ConcreteFactory2)
+createTextBox : return AntTextBox
+
+- Relationship
+* Inheritance(MaterialFactory, WidgetFactory)
+
+- Using
+ContactForm().render(AntWidgetFactory()) : 
+Uses factory.createTextBox()
+
+
+--------------------------------------
+Status - Section 4 completed
+
+
