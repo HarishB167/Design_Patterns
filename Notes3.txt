@@ -42,6 +42,31 @@ Instance methods : get(), set()
 - Using
 logger1 = Logger.get_instance("file1")
 
+--------------------------------------
+Section 3 - Factory Method Patterns
+
+- Defer the creation of an object to subclasses.
+Using different and custom viewEngine in a web framework.
+Using inheritance and polymorphism.
+
+- Structure
+* Controller (Creator)
+render() : Using createViewEngine's engine. 
+(operation : var product = factoryMethod())
+createViewEngine() : returns default engine. (factoryMethod)
+* SharpController (ConcreteCreator)
+createViewEngine() : returns sharp's viewEngine
+(factoryMethod() : return new ConcreteProduct())
+
+- Relationship
+* Inheritance(SharpController, Controller)
+
+- Using
+ProductsController extends SharpController
+ProductsController().listProducts() : Uses render, 
+Then in Controller class :
+render() uses createViewEngine, and
+then engine.render(..)
 
 --------------------------------------
 Status - Section 2 completed
