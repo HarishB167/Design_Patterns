@@ -100,7 +100,30 @@ Exporting slide (construction)
 in pdf, movie etc (representations).
 
 - Structure
+* PresentationBuilder (interface) (Builder)
+addSlide() (buildPart)
+* PdfDocumentBuilder (ConcreteBuilder)
+addSlide() (buildPart) : pdfDoc.addPage()
+getPdfDocument() (getResult)
+* MovieBuilder (ConcreteBuilder)
+addSlide() : movie.addFrame()
+getMovie()
+* Presentation (Director)
+export() (construct) : 
+for every slide : builder.addSlide(slide)
 
+- Relationship
+* Compose(Presentation, PresentationBuilder)
+* Inheritance(PdfDocumentBuilder, PresentationBuilder)
+
+- Using
+presentation = Presentation()
+presentation.add_slide(Slide("Slide 1"))
+presentation.add_slide(Slide("Slide 2"))
+
+builder = MovieBuilder()
+presentation.export(builder)
+movie = builder.get_movie()
 
 --------------------------------------
 Status - Section 5 
