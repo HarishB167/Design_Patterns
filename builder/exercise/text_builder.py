@@ -1,6 +1,6 @@
 from .document_builder import DocumentBuilder
-from .element import Element
 from .text import Text
+from .image import Image
 
 
 class TextBuilder(DocumentBuilder):
@@ -9,15 +9,11 @@ class TextBuilder(DocumentBuilder):
     def __init__(self) -> None:
         self.__content = ""
 
-    def add(self, element: Element):
-        if isinstance(element, Text):
-            text = element.get_content()
-            self.__content += text
+    def add_text(self, text: Text):
+        self.__content += text.get_content()
 
-    def get_text_document(self) -> str:
+    def add_image(self, image: Image):
+        pass
+
+    def get_result(self):
         return self.__content
-
-    def export_to_file(self, file_name: str):
-        with open(file_name, "w") as writer:
-            writer.write(self.__content)
-

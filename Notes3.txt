@@ -113,8 +113,8 @@ export() (construct) :
 for every slide : builder.addSlide(slide)
 
 - Relationship
-* Compose(Presentation, PresentationBuilder)
 * Inheritance(PdfDocumentBuilder, PresentationBuilder)
+* Depend(Presentation, PresentationBuilder)
 
 - Using
 presentation = Presentation()

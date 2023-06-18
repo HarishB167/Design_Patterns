@@ -1,6 +1,8 @@
 from typing import List
-from .element import Element
 from .document_builder import DocumentBuilder
+from .element import Element
+from .image import Image
+from .text import Text
 
 
 class Document:
@@ -12,5 +14,11 @@ class Document:
     
     def export(self, builder: DocumentBuilder, file_name: str):
         for element in self.__elements:
-            builder.add(element)
-        builder.export_to_file(file_name)
+            if isinstance(element, Text):
+                builder.add_text(element)
+            elif isinstance(element, Image):
+                builder.add_image(element)
+
+        with open(file_name, "w") as writer:
+            writer.write(builder.get_result())
+            

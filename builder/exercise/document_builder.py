@@ -1,8 +1,13 @@
 from .element import Element
+from .image import Image
+from .text import Text
 
 class DocumentBuilder:
-    def add(self, element: Element):
+    def add_text(self, text: Text):
         pass
 
-    def export_to_file(self, file_name: str):
+    def add_image(self, image: Image):
+        pass
+
+    def get_result(self):
         pass

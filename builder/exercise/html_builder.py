@@ -13,17 +13,12 @@ class HtmlBuilder(DocumentBuilder):
     def __init__(self) -> None:
         self.__document = HtmlDocument()
 
-    def add(self, element: Element):
-        if isinstance(element, Text):
-            text: Text = element.get_content()
-            self.__document.add(HtmlParagraph(text))
-        elif isinstance(element, Image):
-            source = element.get_source()
-            self.__document.add(HtmlImage(source))
+    def add_text(self, text: Text):
+        self.__document.add(HtmlParagraph(text.get_content()))
 
-    def get_html_document(self) -> HtmlDocument:
-        return self.__document
+    def add_image(self, image: Image):
+        self.__document.add(HtmlImage(image.get_source()))
 
-    def export_to_file(self, file_name: str):
-        with open(file_name, "w") as writer:
-            writer.write(str(self.__document))
+    def get_result(self):
+        return str(self.__document)
+        
